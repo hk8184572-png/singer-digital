@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singer Digital – Admin Control Panel</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-logo">
+        <span class="logo-icon">🏪</span>
+        <div>
+          <div class="logo-title">Singer <span>Digital</span></div>
+          <div class="logo-badge">Admin Panel</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="nav-item active" onclick="switchTab('overview')">
+          <span class="nav-icon">📊</span>
+          <span>Overview</span>
+        </a>
+        <a href="#products" class="nav-item" onclick="switchTab('products')">
+          <span class="nav-icon">🛍️</span>
+          <span>Products Manager</span>
+          <span class="nav-count" id="navProdCount">0</span>
+        </a>
+        <a href="#orders" class="nav-item" onclick="switchTab('orders')">
+          <span class="nav-icon">📦</span>
+          <span>Orders</span>
+          <span class="nav-count alert" id="navOrdersCount">0</span>
+        </a>
+        <a href="#inquiries" class="nav-item" onclick="switchTab('inquiries')">
+          <span class="nav-icon">📩</span>
+          <span>Messages</span>
+          <span class="nav-count" id="navInqCount">0</span>
+        </a>
+        <a href="/" target="_blank" class="nav-item view-site">
+          <span class="nav-icon">🌐</span>
+          <span>View Website ↗</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="shop-location">📍 Alipur Chatha, Gujranwala Rd</div>
+        <div class="shop-status">🟢 Server Online (Port 5500)</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Top Navbar -->
+      <header class="admin-header">
+        <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+        <h2 class="header-page-title" id="pageTitle">Dashboard Overview</h2>
+        <div class="header-actions">
+          <button class="btn-primary" onclick="openAddProductModal()">
+            ➕ Naya Product Add Karein
+          </button>
+          <a href="/" target="_blank" class="btn-outline">
+            🛒 Live Shop
+          </a>
+          <div class="admin-user-pill" id="adminUserPill">
+            <span class="user-avatar">👤</span>
+            <span class="user-name" id="adminUserName">Admin</span>
+            <button class="btn-logout" onclick="handleAdminLogout()" title="Logout Karein">🚪</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- TAB 1: OVERVIEW -->
+      <section id="tab-overview" class="tab-pane active">
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon purple">🛍️</div>
+            <div class="stat-info">
+              <div class="stat-label">Total Products</div>
+              <div class="stat-value" id="statProducts">0</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">📦</div>
+            <div class="stat-info">
+              <div class="stat-label">Total Orders</div>
+              <div class="stat-value" id="statOrders">0</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow">⏳</div>
+            <div class="stat-info">
+              <div class="stat-label">Pending Orders</div>
+              <div class="stat-value" id="statPending">0</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue">💰</div>
+            <div class="stat-info">
+              <div class="stat-label">Total Revenue</div>
+              <div class="stat-value" id="statRevenue">Rs. 0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions & Recent Orders -->
+        <div class="content-split">
+          <div class="card recent-orders-card">
+            <div class="card-header">
+              <h3>📦 Recent Orders</h3>
+              <a href="#orders" onclick="switchTab('orders')" class="view-all-link">Tamam Orders Dekhein →</a>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="recentOrdersBody">
+                  <tr><td colspan="7" class="text-center">Loading orders...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: PRODUCTS MANAGER -->
+      <section id="tab-products" class="tab-pane">
+        <div class="card">
+          <div class="card-header flex-wrap">
+            <div>
+              <h3>🛍️ Tamam Products List</h3>
+              <p class="card-subtitle">Products ki price tabdeel karein ya naya product shamil karein</p>
+            </div>
+            <div class="header-filters">
+              <input type="text" id="adminSearchProd" placeholder="Search product..." oninput="filterAdminProducts()" />
+              <button class="btn-primary" onclick="openAddProductModal()">➕ Add Product</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Pic</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Brand</th>
+                  <th>Price (Rs.)</th>
+                  <th>Old Price</th>
+                  <th>Badge</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsBody">
+                <tr><td colspan="8" class="text-center">Loading products...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: ORDERS -->
+      <section id="tab-orders" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>📦 Tamam Orders</h3>
+              <p class="card-subtitle">Website aur customer checkout se aane walay tamam orders</p>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order #</th>
+                  <th>Customer Name</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <th>Khareedi gayi Cheezein</th>
+                  <th>Total Amount</th>
+                  <th>Order Date</th>
+                  <th>Status</th>
+                  <th>WhatsApp / Action</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <tr><td colspan="9" class="text-center">Loading orders...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: INQUIRIES -->
+      <section id="tab-inquiries" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>📩 Customer Messages & Inquiries</h3>
+              <p class="card-subtitle">Website ke contact form se aane walay sawalaat</p>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Customer Name</th>
+                  <th>Phone / WhatsApp</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="inquiriesTableBody">
+                <tr><td colspan="7" class="text-center">Loading messages...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ADD / EDIT PRODUCT MODAL -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle">➕ Naya Product Add Karein</h3>
+        <button class="modal-close" onclick="closeProductModal()">✕</button>
+      </div>
+
+      <form id="productForm" onsubmit="handleProductSubmit(event)">
+        <input type="hidden" id="editProductId" />
+
+        <div class="form-group">
+          <label>Product ka Naam *</label>
+          <input type="text" id="prodName" placeholder="e.g. Dawlance Inverter AC 1.5 Ton" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category *</label>
+            <select id="prodCategory" required>
+              <option value="Fridges">Fridges</option>
+              <option value="Washing Machines">Washing Machines</option>
+              <option value="AC">Air Conditioners (AC)</option>
+              <option value="LED">LED TVs</option>
+              <option value="Air Fryer">Air Fryer</option>
+              <option value="Electric Kaital">Electric Kaital</option>
+              <option value="Food Processor">Food Processor</option>
+              <option value="Mobile Phones">Mobile Phones</option>
+              <option value="Motor Bike">Motor Bikes</option>
+              <option value="Deep Freezers">Deep Freezers</option>
+              <option value="Iron">Iron / Istari</option>
+              <option value="Microwave">Microwave</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Brand *</label>
+            <select id="prodBrand" required>
+              <option value="Dawlance">Dawlance</option>
+              <option value="Philips">Philips</option>
+              <option value="Haier">Haier</option>
+              <option value="TCL">TCL</option>
+              <option value="Gree">Gree</option>
+              <option value="Orient">Orient</option>
+              <option value="Multinet">Multinet</option>
+              <option value="Vivo">Vivo</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Apple">Apple</option>
+              <option value="Honda">Honda</option>
+              <option value="National">National</option>
+              <option value="Super Asia">Super Asia</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Sale Price (Rs.) *</label>
+            <input type="number" id="prodPrice" placeholder="e.g. 145000" required />
+          </div>
+          <div class="form-group">
+            <label>Old Price (Agar discount ho)</label>
+            <input type="number" id="prodOldPrice" placeholder="e.g. 165000" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Badge Type</label>
+            <select id="prodBadge">
+              <option value="">No Badge</option>
+              <option value="hot">Hot</option>
+              <option value="sale">Sale</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Badge Text</label>
+            <input type="text" id="prodBadgeText" placeholder="e.g. 10% OFF, Best Seller" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Product Picture (Upload Karein)</label>
+          <div class="upload-dropzone" onclick="document.getElementById('imageFileInput').click()">
+            <input type="file" id="imageFileInput" accept="image/*" style="display:none" onchange="previewImageUpload(event)" />
+            <div id="dropzoneContent">
+              <span style="font-size:2rem">📁</span>
+              <p>Yahan click kar ke picture chunein (JPG, PNG, WebP)</p>
+            </div>
+            <img id="imagePreview" src="" alt="Preview" style="display:none; max-height:120px; border-radius:8px; margin: 10px auto;" />
+          </div>
+          <input type="hidden" id="prodImageUrl" />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-outline" onclick="closeProductModal()">Cancel</button>
+          <button type="submit" class="btn-primary" id="saveProdBtn">💾 Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Login Gate Overlay -->
+  <div class="login-overlay" id="adminLoginOverlay" style="display:none;">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="login-icon">🔐</div>
+        <h2>Admin Portal Login</h2>
+        <p>Singer Digital Control Panel mein dakhil honay ke liye credentials enter karein</p>
+      </div>
+
+      <div class="login-alert" id="loginAlert" style="display:none;"></div>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="loginUsername" placeholder="e.g. admin" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn-primary login-btn" id="loginSubmitBtn">
+          🔓 Login Karein
+        </button>
+        <div class="login-hint">
+          <span>💡 Default Login: <strong>admin</strong> / <strong>admin123</strong></span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="adminToastContainer"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

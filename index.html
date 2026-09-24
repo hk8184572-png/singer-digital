@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ur-PK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singer Digital National Electronics – Alipur Chatha</title>
+  <meta name="description" content="Singer Digital National Electronics – Alipur Chatha. Fridge, AC, Washing Machine, LED, Vivo & Samsung Mobile Phones, Air Fryer, Electric Kaital & Food Processor. Brands: Dawlance, Philips, Haier, TCL, Gree, Orient, Multinet, Vivo, National, Super Asia. Contact: 0303-2997825 / 0302-6674808" />
+  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- ======== TOP ANNOUNCEMENT BAR ======== -->
+  <div class="top-announcement-bar">
+    🎁 🎉 <strong>دکان پر آنے والے کسٹمرز کے لیے خصوصی ڈسکاؤنٹ!</strong> &nbsp;|&nbsp; 📞 <strong>0303-2997825</strong> &nbsp;•&nbsp; <strong>0302-6674808</strong> (Alipur Chatha) 🎉 🎁
+  </div>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <div class="logo-icon">🏪</div>
+      <span>Singer<span> Digital</span></span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#deals">Deals</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="admin.html" target="_blank" style="background:#eff6ff;color:#2563eb;font-weight:700;padding:6px 12px;border-radius:20px;border:1px solid #bfdbfe;">⚙️ Admin</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="nav-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Product dhundein..." />
+      </div>
+      <button class="btn-cart" id="cartBtn" aria-label="Open cart">
+        🛒 Cart
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">🏠 Home</a>
+    <a href="#about">ℹ️ About Us</a>
+    <a href="#categories">📦 Categories</a>
+    <a href="#products">🛍️ Products</a>
+    <a href="#brands">🏭 Brands</a>
+    <a href="#deals">🔥 Deals</a>
+    <a href="#contact">📞 Contact</a>
+    <a href="admin.html" target="_blank" style="color:#2563eb;font-weight:700;">⚙️ Admin Control Panel</a>
+  </div>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text fade-in">
+        <div class="hero-badge">🇵🇰 Alipur Chatha, Gujranwala Road</div>
+        <h1 class="hero-title">
+          Singer Digital<br><span class="highlight">National Electronics</span>
+        </h1>
+        <p class="hero-desc">Alipur Chatha ki number one electronics dukan. Fridge, AC, Washing Machine, LED, Mobile Phones, Motor Bike aur bahut kuch — sab ek jagah!</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary">🛍️ Products Dekhein</a>
+          <a href="#contact" class="btn-outline">📞 Rabta Karein</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">500+</div>
+            <div class="stat-label">Products</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Top Brands</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Authentic</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-in">
+        <div class="hero-prod-card" onclick="scrollToProducts()">
+          <img class="hero-prod-img" src="images/media_1789641946550.png" alt="Dawlance Fridge" />
+          <div class="hero-prod-name">Fridges</div>
+          <div class="hero-prod-price">From Rs. 128,999</div>
+        </div>
+        <div class="hero-prod-card" onclick="scrollToProducts()">
+          <img class="hero-prod-img" src="images/media_1789642259960.png" alt="Dawlance AC" />
+          <div class="hero-prod-name">Air Conditioners</div>
+          <div class="hero-prod-price">From Rs. 145,000</div>
+        </div>
+        <div class="hero-prod-card" onclick="scrollToProducts()">
+          <img class="hero-prod-img" src="images/media_1789642507725.png" alt="Dawlance LED" />
+          <div class="hero-prod-name">LED TVs</div>
+          <div class="hero-prod-price">From Rs. 115,000</div>
+        </div>
+        <div class="hero-prod-card" onclick="scrollToProducts()">
+          <img class="hero-prod-img" src="images/media_1789642116638.png" alt="Dawlance Washing Machine" />
+          <div class="hero-prod-name">Washing Machines</div>
+          <div class="hero-prod-price">From Rs. 65,000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT US ======== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid fade-in">
+        <div class="about-img-col">
+          <div class="about-img-wrap">
+            <img src="images/shop_front.jpg" alt="Singer Digital National Electronics Shop Front" />
+            <div class="about-badge-float">
+              <div class="about-badge-icon">📅</div>
+              <div>
+                <div class="about-badge-title">Hamari Dukan</div>
+                <div class="about-badge-sub">6 September 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-tag">Hamaray Baray Mein</div>
+          <h2 class="section-title" style="text-align:left;margin-bottom:16px">Kaun Hain <span>Hum?</span></h2>
+          <p class="about-desc">
+            <strong>Singer Digital National Electronics</strong> Alipur Chatha ki ek nayi lekin bharosa mand electronics dukan hai. Hamari dukan <strong>6 September 2026</strong> ko Gujranwala Road par, Bank of Punjab ke saamne khuli.
+          </p>
+          <p class="about-desc">
+            Ham aapko asli aur guaranteed electronics products faraham kartay hain — chahe fridge ho, AC ho, washing machine ho, LED TV ho, ya mobile phone. Har product top brands ka hai aur har cheez best price mein milti hai.
+          </p>
+          <div class="about-features">
+            <div class="about-feat-item">
+              <span>✅</span>
+              <span>100% Asli Maal – Guarantee ke saath</span>
+            </div>
+            <div class="about-feat-item">
+              <span>💰</span>
+              <span>Best Prices in Alipur Chatha</span>
+            </div>
+            <div class="about-feat-item">
+              <span>🔧</span>
+              <span>After-Sale Service Available</span>
+            </div>
+            <div class="about-feat-item">
+              <span>📦</span>
+              <span>Installment par bhi milega</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:24px">
+            📞 Aaj Hi Rabta Karein
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CATEGORIES ======== -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Browse By</div>
+        <h2 class="section-title">Category <span>Chunein</span></h2>
+        <p class="section-desc">Hamare paas har qisam ki electronics milti hai</p>
+      </div>
+      <div class="categories-grid fade-in">
+        <div class="cat-card" onclick="filterProducts('Fridges')">
+          <img src="images/media_1789641946550.png" alt="Fridges" class="cat-img" />
+          <div class="cat-name">Fridges</div>
+          <div class="cat-count">Dawlance & National</div>
+          <div class="cat-price">From Rs. 128,999</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Washing Machines')">
+          <img src="images/media_1789642116638.png" alt="Washing Machines" class="cat-img" />
+          <div class="cat-name">Washing Machines</div>
+          <div class="cat-count">National & Super Asia</div>
+          <div class="cat-price">From Rs. 65,000</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('AC')">
+          <img src="images/gree_inverter_ac.jpg" alt="Air Conditioners" class="cat-img" />
+          <div class="cat-name">Air Conditioners</div>
+          <div class="cat-count">Gree, Haier & Dawlance</div>
+          <div class="cat-price">From Rs. 142,000</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('LED')">
+          <img src="images/tcl_smart_led.jpg" alt="LED TVs" class="cat-img" />
+          <div class="cat-name">LED TVs</div>
+          <div class="cat-count">TCL, Multinet, Orient & Haier</div>
+          <div class="cat-price">From Rs. 54,000</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Air Fryer')">
+          <img src="images/philips_airfryer_hd9788_clean.png" alt="Air Fryer" class="cat-img" />
+          <div class="cat-name">Air Fryer</div>
+          <div class="cat-count">Philips & Dawlance</div>
+          <div class="cat-price">From Rs. 20,500</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Electric Kaital')">
+          <img src="images/electric_kettle.jpg" alt="Electric Kaital" class="cat-img" />
+          <div class="cat-name">Electric Kaital</div>
+          <div class="cat-count">Cordless Kettles 2.0L</div>
+          <div class="cat-price">From Rs. 3,500</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Food Processor')">
+          <img src="images/philips_food_processor_hr7776_clean.png" alt="Food Processor" class="cat-img" />
+          <div class="cat-name">Food Processor</div>
+          <div class="cat-count">Philips & National 3-in-1</div>
+          <div class="cat-price">From Rs. 38,500</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Mobile Phones')">
+          <img src="images/vivo_smartphone.png" alt="Mobile Phones" class="cat-img" />
+          <div class="cat-name">Mobile Phones</div>
+          <div class="cat-count">Vivo, Samsung, iPhone</div>
+          <div class="cat-price">From Rs. 46,999</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Microwave')">
+          <img src="images/media_1789642762026.png" alt="Microwave" class="cat-img" />
+          <div class="cat-name">Microwave</div>
+          <div class="cat-count">Dawlance & Haier</div>
+          <div class="cat-price">From Rs. 20,000</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Motor Bike')">
+          <img src="images/honda_cd70.jpg" alt="Motor Bikes" class="cat-img" />
+          <div class="cat-name">Motor Bikes</div>
+          <div class="cat-count">Honda & Electric Bikes</div>
+          <div class="cat-price">From Rs. 159,900</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Deep Freezers')">
+          <img src="images/media_1789642419108.png" alt="Deep Freezers" class="cat-img" />
+          <div class="cat-name">Deep Freezers</div>
+          <div class="cat-count">Dawlance & Haier</div>
+          <div class="cat-price">From Rs. 108,000</div>
+        </div>
+        <div class="cat-card" onclick="filterProducts('Iron')">
+          <img src="images/dawlance_heavy_dry_iron.jpg" alt="Irons" class="cat-img" />
+          <div class="cat-name">Irons</div>
+          <div class="cat-count">National & Dawlance</div>
+          <div class="cat-price">From Rs. 10,500</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PRODUCTS ======== -->
+  <section class="products" id="products">
+    <div class="container">
+      
+      <!-- In-Store Discount Banner -->
+      <div class="products-announcement-box fade-in">
+        🎁 🎉 <strong>دکان پر آنے والے کسٹمرز کے لیے خصوصی ڈسکاؤنٹ!</strong> (Special Discount for In-Store Customers) 🎉 🎁
+      </div>
+
+      <div class="section-header fade-in">
+        <div class="section-tag">Hamara Maal</div>
+        <h2 class="section-title">Featured <span>Products</span></h2>
+        <p class="section-desc">Behtareen products, best prices ke saath — sirf Singer Digital par</p>
+      </div>
+
+      <div class="products-filter fade-in">
+        <button class="filter-btn active" onclick="filterProducts('All')">All</button>
+        <button class="filter-btn" onclick="filterProducts('Fridges')">🧊 Fridge</button>
+        <button class="filter-btn" onclick="filterProducts('Washing Machines')">🫧 Washing Machine</button>
+        <button class="filter-btn" onclick="filterProducts('AC')">❄️ AC</button>
+        <button class="filter-btn" onclick="filterProducts('LED')">📺 LED</button>
+        <button class="filter-btn" onclick="filterProducts('Air Fryer')">🍟 Air Fryer</button>
+        <button class="filter-btn" onclick="filterProducts('Electric Kaital')">⚡ Electric Kaital</button>
+        <button class="filter-btn" onclick="filterProducts('Food Processor')">🥣 Food Processor</button>
+        <button class="filter-btn" onclick="filterProducts('Mobile Phones')">📱 Mobile</button>
+        <button class="filter-btn" onclick="filterProducts('Motor Bike')">🏍️ Motor Bike</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ======== BRANDS ======== -->
+  <section class="brands-section" id="brands">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Hamare Brands</div>
+        <h2 class="section-title">Top <span>Brands</span> jo Ham Bachtay Hain</h2>
+        <p class="section-desc">Sirf original aur certified brands — koi duplicate nahi</p>
+      </div>
+
+      <!-- Quick Brand Badges -->
+      <div class="brand-pills-wrap fade-in">
+        <span class="brand-pill" onclick="filterByBrand('Dawlance')">🏭 Dawlance</span>
+        <span class="brand-pill" onclick="filterByBrand('Philips')">✨ Philips</span>
+        <span class="brand-pill" onclick="filterByBrand('Haier')">❄️ Haier</span>
+        <span class="brand-pill" onclick="filterByBrand('TCL')">📺 TCL</span>
+        <span class="brand-pill" onclick="filterByBrand('Gree')">💨 Gree</span>
+        <span class="brand-pill" onclick="filterByBrand('Orient')">🌟 Orient</span>
+        <span class="brand-pill" onclick="filterByBrand('Multinet')">📱 Multinet</span>
+        <span class="brand-pill" onclick="filterByBrand('National')">⭐ National</span>
+        <span class="brand-pill" onclick="filterByBrand('Super Asia')">💧 Super Asia</span>
+        <span class="brand-pill" onclick="filterByBrand('Samsung')">📲 Samsung</span>
+        <span class="brand-pill" onclick="filterByBrand('Vivo')">📱 Vivo</span>
+        <span class="brand-pill" onclick="filterByBrand('Apple')">🍏 Apple</span>
+        <span class="brand-pill" onclick="filterByBrand('Honda')">🏍️ Honda</span>
+      </div>
+
+      <div class="brands-grid fade-in">
+        <div class="brand-card" onclick="filterByBrand('Dawlance')">
+          <div class="brand-logo">🏭</div>
+          <div class="brand-name">Dawlance</div>
+          <div class="brand-cat">Fridge, Freezer, AC, Microwave, Iron, Air Fryer</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Philips')">
+          <div class="brand-logo">✨</div>
+          <div class="brand-name">Philips</div>
+          <div class="brand-cat">Air Fryer, Food Processor, Electric Kaital</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Haier')">
+          <div class="brand-logo">❄️</div>
+          <div class="brand-name">Haier</div>
+          <div class="brand-cat">Inverter AC, LED TV, Fridge, Washing Machine</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('TCL')">
+          <div class="brand-logo">📺</div>
+          <div class="brand-name">TCL</div>
+          <div class="brand-cat">Smart 4K UHD, Google & Android TVs</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Gree')">
+          <div class="brand-logo">💨</div>
+          <div class="brand-name">Gree</div>
+          <div class="brand-cat">Inverter AC (Fairy, T3 Heat & Cool)</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Orient')">
+          <div class="brand-logo">🌟</div>
+          <div class="brand-name">Orient</div>
+          <div class="brand-cat">Smart LED TVs, Inverter AC, Fridge</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Multinet')">
+          <div class="brand-logo">📱</div>
+          <div class="brand-name">Multinet</div>
+          <div class="brand-cat">Frameless Android Smart LED TVs</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('National')">
+          <div class="brand-logo">⭐</div>
+          <div class="brand-name">National</div>
+          <div class="brand-cat">Washing Machine, Iron, Juicer, Oven</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Super Asia')">
+          <div class="brand-logo">💧</div>
+          <div class="brand-name">Super Asia</div>
+          <div class="brand-cat">Washing Machine, Cooler & Geyser</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Vivo')">
+          <div class="brand-logo">📱</div>
+          <div class="brand-name">Vivo</div>
+          <div class="brand-cat">Y Series & V Series Smartphones</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Samsung')">
+          <div class="brand-logo">📲</div>
+          <div class="brand-name">Samsung</div>
+          <div class="brand-cat">Galaxy Smartphones & Smart Displays</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Apple')">
+          <div class="brand-logo">🍏</div>
+          <div class="brand-name">Apple</div>
+          <div class="brand-cat">iPhone 15 Pro Max & Mobiles</div>
+        </div>
+        <div class="brand-card" onclick="filterByBrand('Honda')">
+          <div class="brand-logo">🏍️</div>
+          <div class="brand-name">Honda</div>
+          <div class="brand-cat">CD 70, CG 125 & Motor Bikes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== DEALS BANNER ======== -->
+  <section class="deals-banner" id="deals">
+    <div class="deals-inner">
+      <div class="fade-in">
+        <div class="deals-tag">⚡ Mahdood Waqt</div>
+        <h2 class="deals-title">Khaas Offers &<br><span>Flash Sales</span></h2>
+        <p class="deals-desc">Yeh offers sirf kuch ghantay ki hain. Jaldi karein aur apna pasanda product ly jain!</p>
+        <div class="countdown">
+          <div class="countdown-item">
+            <span class="count-value" id="countHours">08</span>
+            <span class="count-label">Ghantay</span>
+          </div>
+          <div class="countdown-item">
+            <span class="count-value" id="countMins">00</span>
+            <span class="count-label">Minute</span>
+          </div>
+          <div class="countdown-item">
+            <span class="count-value" id="countSecs">00</span>
+            <span class="count-label">Second</span>
+          </div>
+        </div>
+        <a href="#products" class="btn-primary">🔥 Offer Products Dekhein</a>
+      </div>
+      <div class="deals-products fade-in">
+        <div class="deal-card" onclick="addToCartById(1)">
+          <img src="images/media_1789641946550.png" alt="Dawlance Fridge Deal" />
+          <div class="deal-name">Dawlance Fridge</div>
+          <div class="deal-discount">10% OFF</div>
+        </div>
+        <div class="deal-card" onclick="addToCartById(3)">
+          <img src="images/media_1789642259960.png" alt="Dawlance AC Deal" />
+          <div class="deal-name">Dawlance AC 1.5 Ton</div>
+          <div class="deal-discount">12% OFF</div>
+        </div>
+        <div class="deal-card" onclick="addToCartById(5)">
+          <img src="images/media_1789642507725.png" alt="Dawlance LED Deal" />
+          <div class="deal-name">Dawlance 55" LED</div>
+          <div class="deal-discount">15% OFF</div>
+        </div>
+        <div class="deal-card" onclick="addToCartById(2)">
+          <img src="images/media_1789642116638.png" alt="Dawlance Washing Machine Deal" />
+          <div class="deal-name">Dawlance Washing Machine</div>
+          <div class="deal-discount">15% OFF</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FEATURES ======== -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Kyun Chunein Hum</div>
+        <h2 class="section-title">Hamari <span>Khasoosiyat</span></h2>
+      </div>
+      <div class="features-grid fade-in">
+        <div class="feature-card">
+          <span class="feature-icon">✅</span>
+          <div class="feature-title">100% Asli Maal</div>
+          <p class="feature-desc">Sab products original hain. Koi duplicate ya copy nahi. Warranty ke saath milta hai.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💰</span>
+          <div class="feature-title">Best Price</div>
+          <p class="feature-desc">Alipur Chatha mein sab se sasti electronics. Price match guarantee dete hain hum.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📦</span>
+          <div class="feature-title">Installment Available</div>
+          <p class="feature-desc">Asaan qiston par products ghar ly jain. Koi hidden charges nahi.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔧</span>
+          <div class="feature-title">After-Sale Service</div>
+          <p class="feature-desc">Khareedne ke baad bhi hum saath hain. Repair aur service ka pura intizaam.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🚚</span>
+          <div class="feature-title">Home Delivery</div>
+          <p class="feature-desc">Alipur Chatha aur aaas paas ilaakon mein ghar tak delivery mumkin hai.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">💬</span>
+          <div class="feature-title">WhatsApp Support</div>
+          <p class="feature-desc">Koi bhi sawal ho, WhatsApp par rabta karein. Jaldi jawab denge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TESTIMONIALS ======== -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Customer Reviews</div>
+        <h2 class="section-title">Hamare <span>Customers Kya Kehtay Hain</span></h2>
+        <p class="section-desc">Alipur Chatha ke logon ka hamaray baray mein kya kheyal hai</p>
+      </div>
+      <div class="testimonials-grid fade-in">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Singer Digital se Dawlance fridge kharida — bilkul genuine aur best price par. Home delivery bhi free mili. Bohot acha service hai!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div>
+              <div class="author-name">Muhammad Junaid</div>
+              <div class="author-location">📍 Alipur Chatha</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Dawlance AC liya installment par — koi mushkil nahi aayi. Sab kuch aasaan tha. Dukan waalay bohot helpful hain. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RA</div>
+            <div>
+              <div class="author-name">Raheel Ahmed</div>
+              <div class="author-location">📍 Wazirabad</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"National washing machine ek saal se chal rahi hai — koi masla nahi. After-sale service bhi behtareen hai. Singer Digital number one!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SB</div>
+            <div>
+              <div class="author-name">Sana Bibi</div>
+              <div class="author-location">📍 Alipur Chatha</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT ======== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-tag">Rabta Karein</div>
+        <h2 class="section-title">Contact <span>Us</span></h2>
+        <p class="section-desc">Koi bhi sawal ho — hum haazir hain!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <div>
+            <h3 class="contact-info-title">Dukan Par Aain Ya Call Karein</h3>
+            <p>Hum Alipur Chatha mein aapki khidmat ke liye haazir hain. Dukan par aain ya WhatsApp karein.</p>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">📍</span>
+            <div>
+              <h4>Hamaara Pata</h4>
+              <p>Gujranwala Road, Alipur Chatha<br>Opp. Bank of Punjab<br>District Hafizabad, Punjab, Pakistan</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">📞</span>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <p>
+                <a href="tel:03032997825" style="color:inherit;text-decoration:none;font-weight:700;">0303-2997825</a> &nbsp;|&nbsp; 
+                <a href="tel:03026674808" style="color:inherit;text-decoration:none;font-weight:700;">0302-6674808</a>
+                <br>Dono numbers WhatsApp par 24/7 available hain
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">🕐</span>
+            <div>
+              <h4>Dukan Timing</h4>
+              <p>Monday – Saturday: 9:00 AM – 9:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon">📅</span>
+            <div>
+              <h4>Opening Date</h4>
+              <p>Hamari dukan <strong>6 September 2026</strong> ko khuli.<br>Naye hain magar bharosa mand hain! ✅</p>
+            </div>
+          </div>
+          <!-- WhatsApp Direct Buttons -->
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+            <a href="https://wa.me/923032997825?text=Assalam%20o%20Alaikum!%20Singer%20Digital%20National%20Electronics%20se%20rabta%20karna%20chahta%20hoon." target="_blank" class="whatsapp-direct-btn" style="flex:1;min-width:180px;margin-top:0;">
+              💬 0303-2997825
+            </a>
+            <a href="https://wa.me/923026674808?text=Assalam%20o%20Alaikum!%20Singer%20Digital%20National%20Electronics%20se%20rabta%20karna%20chahta%20hoon." target="_blank" class="whatsapp-direct-btn" style="flex:1;min-width:180px;margin-top:0;background:#128c7e;">
+              💬 0302-6674808
+            </a>
+          </div>
+          <div class="map-wrap" style="margin-top:16px">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13583!2d73.978!3d32.318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f1234%3A0x0!2zQWxpcHVyIENoYXRoYQ!5e0!3m2!1sen!2spk!4v1234"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Singer Digital National Electronics – Alipur Chatha">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap fade-in">
+          <h3>📩 Message Bhejein</h3>
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Pehla Naam</label>
+                <input type="text" id="fname" placeholder="e.g. Hassan" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Aakhri Naam</label>
+                <input type="text" id="lname" placeholder="e.g. Ali" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email (Agar ho)</label>
+                <input type="email" id="email" placeholder="aap@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp *</label>
+                <input type="tel" id="phone" placeholder="0300-0000000" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Sawal ka Mauzu</label>
+              <select id="subject">
+                <option value="">Topic chunein...</option>
+                <option value="price">Price Puchna</option>
+                <option value="product">Kisi Product ke baray mein</option>
+                <option value="installment">Installment Plan</option>
+                <option value="delivery">Home Delivery</option>
+                <option value="warranty">Warranty / Return</option>
+                <option value="other">Kuch aur</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Apna Sawal / Message</label>
+              <textarea id="message" placeholder="Yahan apna sawal ya pegham likhein..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>📨 Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:16px">
+          <div class="logo-icon">🏪</div>
+          <span>Singer<span> Digital</span></span>
+        </div>
+        <p>Singer Digital National Electronics – Alipur Chatha ki bharosa mand electronics dukan. 6 September 2026 se aapki khidmat mein haazir hain.</p>
+        <div class="social-links">
+          <a href="https://wa.me/923032997825" class="social-link" title="WhatsApp" target="_blank">💬</a>
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="Instagram">📸</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#deals">Deals</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Fridges</a></li>
+          <li><a href="#">Washing Machines</a></li>
+          <li><a href="#">Air Conditioners</a></li>
+          <li><a href="#">LED TVs</a></li>
+          <li><a href="#">Mobile Phones</a></li>
+          <li><a href="#">Motor Bikes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hamaray Brands</h4>
+        <ul>
+          <li><a href="#brands">Dawlance</a></li>
+          <li><a href="#brands">Philips</a></li>
+          <li><a href="#brands">Haier</a></li>
+          <li><a href="#brands">TCL</a></li>
+          <li><a href="#brands">Gree</a></li>
+          <li><a href="#brands">Orient</a></li>
+          <li><a href="#brands">Multinet</a></li>
+          <li><a href="#brands">Vivo</a></li>
+          <li><a href="#brands">Samsung</a></li>
+          <li><a href="#brands">National</a></li>
+          <li><a href="#brands">Super Asia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Singer Digital National Electronics – Alipur Chatha. All Rights Reserved.</p>
+      <p>Made with ❤️ in Pakistan 🇵🇰 | 📞 <a href="tel:03032997825" style="color:inherit;">0303-2997825</a> &nbsp;|&nbsp; 📞 <a href="tel:03026674808" style="color:inherit;">0302-6674808</a> &nbsp;|&nbsp; <a href="admin.html" target="_blank" style="color:#38bdf8;text-decoration:none;font-weight:600;">⚙️ Admin Panel</a></p>
+    </div>
+  </footer>
+
+  <!-- ======== CART SIDEBAR ======== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 Aapka Cart</h3>
+      <button class="cart-close" id="cartClose" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <div class="empty-icon">🛒</div>
+        <p>Cart abhi khali hai</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Kul Raqam</span>
+        <span class="cart-total-amount" id="cartTotal">Rs. 0</span>
+      </div>
+      <button class="btn-checkout" onclick="openCheckoutModal()">
+        💳 Order Confirm Karein (Checkout)
+      </button>
+      <button class="btn-whatsapp" onclick="orderWhatsApp('primary')" style="background:#128c7e;margin-top:6px;">
+        💬 Direct WhatsApp Order
+      </button>
+    </div>
+  </div>
+
+  <!-- Customer Checkout Modal -->
+  <div class="checkout-modal-overlay" id="checkoutModalOverlay" style="display:none;" onclick="handleCheckoutOverlayClick(event)">
+    <div class="checkout-modal-card">
+      <div class="checkout-modal-header">
+        <h3>📦 Delivery & Order Details</h3>
+        <button class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
+      </div>
+
+      <div class="checkout-order-summary" id="checkoutSummary">
+        <!-- populated dynamically -->
+      </div>
+
+      <form id="customerCheckoutForm" onsubmit="submitCustomerOrder(event)">
+        <div class="form-group">
+          <label>Pura Naam (Customer Name) *</label>
+          <input type="text" id="custName" placeholder="e.g. Muhammad Hassan" required />
+        </div>
+        <div class="form-group">
+          <label>Mobile / WhatsApp Number *</label>
+          <input type="tel" id="custPhone" placeholder="e.g. 0303-1234567" required />
+        </div>
+        <div class="form-group">
+          <label>Delivery Pata (Full Address / Town) *</label>
+          <textarea id="custAddress" rows="2" placeholder="Gali / Mohallah, Alipur Chatha ya District" required></textarea>
+        </div>
+
+        <div class="payment-method-box">
+          <span style="font-size:1.4rem;">💵</span>
+          <div>
+            <strong>Cash on Delivery (COD)</strong>
+            <p style="font-size:0.8rem;color:#065f46;margin-top:2px;">Saman delivery ke waqt payment ada karein</p>
+          </div>
+        </div>
+
+        <div class="modal-actions" style="margin-top:18px;">
+          <button type="button" class="btn-secondary" onclick="closeCheckoutModal()">Cancel</button>
+          <button type="submit" class="btn-primary" id="confirmOrderBtn" style="background:#2563eb;color:white;font-weight:700;">
+            ✅ Order Book Karein
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js?v=10"></script>
+</body>
+</html>
