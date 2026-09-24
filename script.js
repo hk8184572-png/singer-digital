@@ -692,8 +692,8 @@ async function submitCustomerOrder(e) {
 
     const orderId = data.success ? data.orderId : "NEW";
 
-    // Build WhatsApp message including Order ID
-    const targetPhone = currentCheckoutTarget === "secondary" ? SHOP_PHONE_2 : SHOP_PHONE;
+    // Build WhatsApp message including Order ID (Always sent to 0303-2997825)
+    const targetPhone = SHOP_PHONE;
     let text = `السلام علیکم Singer Digital!\nNaya Order Book Hua Hai (Order #${orderId}):\n`;
     text += `👤 Customer: ${name}\n📞 Phone: ${phone}\n📍 Pata: ${address}\n\n*Items:*\n`;
     itemsSnapshot.forEach((i, idx) => {
