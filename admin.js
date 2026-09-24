@@ -255,14 +255,50 @@ function filterAdminProducts() {
   renderAdminProducts(filtered);
 }
 
-// Modal handling
+// Modal handling & Image Modes
+function switchImgMode(mode) {
+  const uploadBox = document.getElementById("imgUploadBox");
+  const urlBox = document.getElementById("imgUrlBox");
+  const tabUploadBtn = document.getElementById("tabUploadBtn");
+  const tabUrlBtn = document.getElementById("tabUrlBtn");
+
+  if (!uploadBox || !urlBox) return;
+
+  if (mode === "url") {
+    uploadBox.style.display = "none";
+    urlBox.style.display = "block";
+    tabUploadBtn.classList.remove("active");
+    tabUrlBtn.classList.add("active");
+  } else {
+    uploadBox.style.display = "block";
+    urlBox.style.display = "none";
+    tabUploadBtn.classList.add("active");
+    tabUrlBtn.classList.remove("active");
+  }
+}
+
+function previewUrlImage(url) {
+  const cleanUrl = url.trim();
+  document.getElementById("prodImageUrl").value = cleanUrl;
+  const preview = document.getElementById("urlPreview");
+  if (cleanUrl) {
+    preview.src = cleanUrl;
+    preview.style.display = "block";
+  } else {
+    preview.style.display = "none";
+  }
+}
+
 function openAddProductModal() {
   document.getElementById("modalTitle").innerText = "➕ Naya Product Add Karein";
   document.getElementById("editProductId").value = "";
   document.getElementById("productForm").reset();
   document.getElementById("prodImageUrl").value = "";
+  document.getElementById("imgUrlInput").value = "";
   document.getElementById("imagePreview").style.display = "none";
+  document.getElementById("urlPreview").style.display = "none";
   document.getElementById("dropzoneContent").style.display = "block";
+  switchImgMode("upload");
   document.getElementById("productModal").classList.add("open");
 }
 
@@ -285,11 +321,22 @@ function editProduct(id) {
   document.getElementById("prodBadgeText").value = prod.badgeText || "";
   document.getElementById("prodImageUrl").value = prod.image || "";
 
-  if (prod.image) {
-    const preview = document.getElementById("imagePreview");
-    preview.src = prod.image;
-    preview.style.display = "block";
-    document.getElementById("dropzoneContent").style.display = "none";
+  const isWebUrl = prod.image && (prod.image.startsWith("http://") || prod.image.startsWith("https://"));
+
+  if (isWebUrl) {
+    switchImgMode("url");
+    document.getElementById("imgUrlInput").value = prod.image;
+    const urlPreview = document.getElementById("urlPreview");
+    urlPreview.src = prod.image;
+    urlPreview.style.display = "block";
+  } else {
+    switchImgMode("upload");
+    if (prod.image) {
+      const preview = document.getElementById("imagePreview");
+      preview.src = prod.image;
+      preview.style.display = "block";
+      document.getElementById("dropzoneContent").style.display = "none";
+    }
   }
 
   document.getElementById("productModal").classList.add("open");
